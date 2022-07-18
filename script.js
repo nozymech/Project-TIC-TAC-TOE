@@ -21,9 +21,27 @@ const displayController = (()=> {
          x.innerText = board[i] ; 
          gameBoard.append(x);
      };
-    
-  }
-  return {refresh};
+  };
+  const check = () => {
+      if (board[0] != "" && board[0] == board[1] && board[1] == board[2]){
+          board[0] == "O" ? alert("O win") : alert("X win")
+      }else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]){
+          board[3] == "O" ? alert("O win") : alert("X win")
+      }else if (board[6]!= ""&& board[8] != "" && board[6] == board[7] && board[7] == board[8]){
+          board[6] == "O" ? alert("O win") : alert("X win")
+      }else if (board[0] != ""&& board[0] == board[3] && board[3] == board[6]){
+          board[0] == "O" ? alert("O win") : alert("X win")
+      }else if (board[1] != ""&& board[1] == board[4] && board[4] == board[7]){
+          board[1] == "O" ? alert("O win") : alert("X win")
+      }else if (board[2] != ""&& board[2] == board[5] && board[5] == board[8]){
+          board[2] == "O" ? alert("O win") : alert("X win")
+      }else if (board[0] != ""&& board[0] == board[4] && board[4] == board[8]){
+          board[0] == "O" ? alert("O win") : alert("X win")
+      }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
+          board[2] == "O" ? alert("O win") : alert("X win")
+      }
+  };
+  return {refresh,check};
 })();
 
 displayController.refresh();
@@ -36,39 +54,20 @@ boardSquares.forEach((button)=>{
             button.innerText= "O";
             clickButton = Number(button.id);
             board.splice(clickButton,1,"O");
-            check();
             console.log(clickButton);
             console.log(board);
-
             status.innerText= "X turn"
+            displayController.check();
         } else if (clickNumber==2 || clickNumber==4 || clickNumber==6 || clickNumber==8) {
             button.innerText= "X";
             clickButton = Number(button.id);
             board.splice(clickButton,1,"X")
-            check();
             console.log(clickButton);
             console.log(board);
             status.innerText= "O turn"
+            displayController.check();
         }
-	})
-})
+    })
+    });
+    
 
-let check = () => {
-    if (board[0] != "" && board[0] == board[1] && board[1] == board[2]){
-        board[0] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]){
-        board[3] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[6]!= ""&& board[8] != "" && board[6] == board[7] && board[7] == board[8]){
-        board[6] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[0] != ""&& board[0] == board[3] && board[3] == board[6]){
-        board[0] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[1] != ""&& board[1] == board[4] && board[4] == board[7]){
-        board[1] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[2] != ""&& board[2] == board[5] && board[5] == board[8]){
-        board[2] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[0] != ""&& board[0] == board[4] && board[4] == board[8]){
-        board[0] == "O" ? console.log("O win") : console.log("X win")
-    }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
-        board[2] == "O" ? console.log("O win") : console.log("X win")
-    }
-};
