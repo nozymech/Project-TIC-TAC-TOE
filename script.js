@@ -71,4 +71,4 @@ let check = () => {
     }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
         board[2] == "O" ? console.log("O win") : console.log("X win")
     }
-}
+};
