@@ -1,6 +1,7 @@
 #gameBoard{
     width: 240px;
     height: 240px;
+    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
 }
@@ -8,10 +9,27 @@
 .square {
     width: 80px;
     height: 80px;
-    background-color: beige;
-    outline: none;
+    outline: 1px solid olive;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: xx-large;
 }
+
+.square {
+   width: 80px;
+   height: 80px;
+   outline: 1px solid olive;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: xx-large;
+}
+
+.container {
+ display:flex;
+ flex-direction:column;
+ justify-content: center;
+ align-items: center;
+}
+
