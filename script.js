@@ -15,49 +15,65 @@ const player2 = player('peter', "X" , 0);
 
 const displayController = (()=> {
   // game board is composed of nine button
-  const refresh = () => {
+  const create = () => {
     for (let i = 0; i < board.length; i++) {
          let x = document.createElement('button');
          x.className = "square";
          x.id = i;
          x.innerText = board[i] ; 
          gameBoard.append(x);
-     };
-  };
-  //in tic tac toe game have three marks in rows wii be win. 3 horizontal rows, 3 vertical rows , 2 oblique rows.
+        };
+    };
+
+    // remove all element
+  const removeAllChildNodes = (parent) =>  {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+
+    // remove all element & create new game board according to board array 
+  const refresh = () => {
+        removeAllChildNodes(gameBoard);
+        create();
+    };
+
+    //in tic tac toe game have three marks in rows wii be win. 3 horizontal rows, 3 vertical rows , 2 oblique rows.
   const check = () => {
       if (board[0] != "" && board[0] == board[1] && board[1] == board[2]){
           board[0] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]){
           board[3] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[6]!= ""&& board[8] != "" && board[6] == board[7] && board[7] == board[8]){
           board[6] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[0] != ""&& board[0] == board[3] && board[3] == board[6]){
           board[0] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[1] != ""&& board[1] == board[4] && board[4] == board[7]){
           board[1] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[2] != ""&& board[2] == board[5] && board[5] == board[8]){
           board[2] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[0] != ""&& board[0] == board[4] && board[4] == board[8]){
           board[0] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
           board[2] == "O" ? alert("O win") : alert("X win")
-          refreshScreen();
+          refresh();
       }
   };
-  return {refresh,check};
+
+  return {create,check};
 })();
 
-displayController.refresh();
+// make a function call to create game board
+displayController.create();
 
-// add event listener to game board
+// add event listeners to game board after create it
 const boardSquares = document.querySelectorAll("button.square");
 boardSquares.forEach((button)=>{
     button.addEventListener('click',()=>{
@@ -82,15 +98,4 @@ boardSquares.forEach((button)=>{
     }, {once : true})
     });
     
-// remove all element
-const removeAllChildNodes = (parent) =>  {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
 
-// remove all element & create new game board according to board array 
-const refreshScreen = () => {
-    removeAllChildNodes(gameBoard);
-    displayController.refresh();
-}
