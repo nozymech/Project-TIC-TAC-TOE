@@ -7,18 +7,24 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
-    <div class="header">Tic Tac Toe</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        Tic Tac Toe
+      </a>
+    </div>
+  </nav>
     <div class="container">
-        <div class="option">
-            <button>O</button>
-            <button>X</button>
-        </div>
-        <div id="status">Start playing or choose player</div>
+        <div id="status" class="mt-5 mb-5 fs-1">Player O`s turn</div>
         <div id="gameBoard">
         </div>
-        <button id="reset">Play Again</button>
+        <button id="restart"  class="btn btn-outline-dark mt-5 fs-3">Restart</button>
     </div>
+    <div class="footer">Copyright © 2022 Yan (@nozymech)</div>
 </body>
 </html>

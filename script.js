@@ -2,7 +2,7 @@ let board = ["","","","","","","","",""];
 let gameBoard = document.getElementById("gameBoard");
 let status = document.getElementById("status");
 let square = document.querySelectorAll("button.square")
-let reset = document.getElementById("reset");
+let restart = document.getElementById("restart");
 let clickButton = "";
 let clickNumber = 0 ;
 
@@ -41,29 +41,31 @@ const displayController = (()=> {
     //in tic tac toe game have three marks in rows wii be win. 3 horizontal rows, 3 vertical rows , 2 oblique rows.
   const check = () => {
       if (board[0] != "" && board[0] == board[1] && board[1] == board[2]){
-          board[0] == "O" ? alert("O win") : alert("X win")
+          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]){
-          board[3] == "O" ? alert("O win") : alert("X win")
+          board[3] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[6]!= ""&& board[8] != "" && board[6] == board[7] && board[7] == board[8]){
-          board[6] == "O" ? alert("O win") : alert("X win")
+          board[6] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[0] != ""&& board[0] == board[3] && board[3] == board[6]){
-          board[0] == "O" ? alert("O win") : alert("X win")
+          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[1] != ""&& board[1] == board[4] && board[4] == board[7]){
-          board[1] == "O" ? alert("O win") : alert("X win")
+          board[1] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[2] != ""&& board[2] == board[5] && board[5] == board[8]){
-          board[2] == "O" ? alert("O win") : alert("X win")
+          board[2] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[0] != ""&& board[0] == board[4] && board[4] == board[8]){
-          board[0] == "O" ? alert("O win") : alert("X win")
+          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
-          board[2] == "O" ? alert("O win") : alert("X win")
+          board[2] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
           refresh();
+      }else if (board.find(board => board == "") == undefined) {
+        status.innerText= "It's a draw!"
       }
   };
 
@@ -84,7 +86,7 @@ boardSquares.forEach((button)=>{
             board.splice(clickButton,1,"O");
             console.log(clickButton);
             console.log(board);
-            status.innerText= "X turn"
+            status.innerText= "Player X`s turn"
             displayController.check();
         } else if (clickNumber==2 || clickNumber==4 || clickNumber==6 || clickNumber==8) {
             button.innerText= "X";
@@ -92,10 +94,12 @@ boardSquares.forEach((button)=>{
             board.splice(clickButton,1,"X")
             console.log(clickButton);
             console.log(board);
-            status.innerText= "O turn"
+            status.innerText= "Player O`s turn"
             displayController.check();
         }
     }, {once : true})
     });
     
-
+restart.addEventListener("click",()=>{
+    location.reload();
+})

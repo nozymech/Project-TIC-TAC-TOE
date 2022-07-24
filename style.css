@@ -1,29 +1,20 @@
 #gameBoard{
-    width: 240px;
-    height: 240px;
+    width: 360px;
+    height: 360px;
     background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square {
-    width: 80px;
-    height: 80px;
-    outline: 1px solid olive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
-}
-
-.square {
-   width: 80px;
-   height: 80px;
-   outline: 1px solid olive;
+   width: 120px;
+   height: 120px;
+   outline: 1px solid black;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: xx-large;
+   font-size: 50px;
+   background-color: white;
 }
 
 .container {
@@ -33,3 +24,12 @@
  align-items: center;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size:x-large;
+}
