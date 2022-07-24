@@ -6,13 +6,6 @@ let restart = document.getElementById("restart");
 let clickButton = "";
 let clickNumber = 0 ;
 
-const player = (name,mark,score) => {
-  return { name, mark, score };
-};
-
-const player1 = player('jeff', "O" , 0);
-const player2 = player('peter', "X" , 0);
-
 const displayController = (()=> {
   // game board is composed of nine button
   const create = () => {
