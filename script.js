@@ -34,28 +34,28 @@ const displayController = (()=> {
     //in tic tac toe game have three marks in rows wii be win. 3 horizontal rows, 3 vertical rows , 2 oblique rows.
   const check = () => {
       if (board[0] != "" && board[0] == board[1] && board[1] == board[2]){
-          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[0] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[3] != "" && board[3] == board[4] && board[4] == board[5]){
-          board[3] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[3] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[6]!= ""&& board[8] != "" && board[6] == board[7] && board[7] == board[8]){
-          board[6] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[6] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[0] != ""&& board[0] == board[3] && board[3] == board[6]){
-          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[0] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[1] != ""&& board[1] == board[4] && board[4] == board[7]){
-          board[1] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[1] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[2] != ""&& board[2] == board[5] && board[5] == board[8]){
-          board[2] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[2] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[0] != ""&& board[0] == board[4] && board[4] == board[8]){
-          board[0] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[0] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board[2] != ""&& board[2] == board[4] && board[4] == board[6]){
-          board[2] == "O" ? status.innerText= "Player has O won!" : status.innerText= "Player X has won!"
+          board[2] == "O" ? status.innerText= "Player O has won!" : status.innerText= "Player X has won!"
           refresh();
       }else if (board.find(board => board == "") == undefined) {
         status.innerText= "It's a draw!"
